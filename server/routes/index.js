@@ -13,6 +13,6 @@ const borrowRoutes = require("./Borrow");
 
 route.use("/api/users", userRoutes);
 route.use("/api/books", bookRoutes);
-// route.use("/borrow", borrowRoutes);
+route.use("/api/borrow", borrowRoutes);
 
 module.exports = route;

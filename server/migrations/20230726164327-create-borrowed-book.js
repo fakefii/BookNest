@@ -2,23 +2,20 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('borrowedBooks', {
+    await queryInterface.createTable('BorrowedBooks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.INTEGER
-      },
-      book_id: {
-        type: Sequelize.INTEGER
-      },
-      borrow_date: {
+      borrowDate: {
         type: Sequelize.STRING
       },
-      return_date: {
+      returnDate: {
+        type: Sequelize.STRING
+      },
+      status: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -32,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('borrowedBooks');
+    await queryInterface.dropTable('BorrowedBooks');
   }
 };
