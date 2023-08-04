@@ -8,7 +8,8 @@ import ContactUs from './ContactUs/ContactUs';
 import SocialMedia from './SocialMedia/SocialMedia';
 import RegisForm from './RegisterForm/RegisForm';
 import LoginForm from './LoginForm/LoginForm';
+import BookContent from './BookContent/BookContent';
 
 export {
-    NavigationBar, ScrollingText, FeatureSection, HeroSection, ExploreBook, Donation, ContactUs, SocialMedia, RegisForm, LoginForm
+    NavigationBar, ScrollingText, FeatureSection, HeroSection, ExploreBook, Donation, ContactUs, SocialMedia, RegisForm, LoginForm, BookContent
 }

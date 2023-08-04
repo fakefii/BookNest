@@ -1,9 +1,16 @@
 import React from 'react'
+import {NavigationBar, ScrollingText, BookContent} from '../../component'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
-const index = () => {
+const BookPage = () => {
   return (
-    <div>index</div>
+    <div>
+      <NavigationBar></NavigationBar>
+      <ScrollingText></ScrollingText>
+      <BookContent></BookContent>
+    </div>
   )
 }
 
-export default index
+export default BookPage
