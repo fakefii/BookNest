@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .book-details h2 {
@@ -50,7 +51,7 @@
   color: #555;
 }
 
-.btn-primary {
+.btn-primary-list {
   background-color: #007bff;
   border: none;
   color: #fff;
@@ -58,8 +59,96 @@
   border-radius: 5px;
   cursor: pointer;
   align-self: flex-end; /* Align button to the right */
+  margin-right: 5px;
+  margin-bottom: 5px
 }
 
-.btn-primary:hover {
+.btn-primary-list:hover {
   background-color: #0056b3;
+}
+
+.btn-primary-add {
+  position: absolute;
+  top: 120px; /* Adjust the top distance as needed */
+  left: 50px; /* Adjust the left distance as needed */
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary-add:hover {
+  background-color: #218838;
+}
+
+.btn-primary-modify {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Align button to the right */
+  margin-right: 5px;
+  margin-bottom: 5px
+}
+
+.btn-primary-modify:hover {
+  background-color: #4f565c;
+}
+
+.btn-update {
+  background-color: #0dcaf0;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Align button to the right */
+  margin-right: 5px;
+  margin-bottom: 5px
+}
+
+.btn-update:hover {
+  background-color: #0aa7c7;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Align button to the right */
+  margin-right: 5px;
+  margin-bottom: 5px
+}
+
+.btn-delete:hover {
+  background-color: #ad2a37;
+}
+
+.btn-icon-modify {
+  margin-right: 5px;
+}
+
+.btn-icon-delete {
+  margin-right: 5px;
+}
+
+.btn-icon-detail {
+  margin-right: 5px;
+}
+
+.btn-text-detail {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-icon-update {
+  margin-right: 5px;
 }

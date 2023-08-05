@@ -1,0 +1,14 @@
+.btn-primary-update {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-primary-update:hover {
+    background-color: #0056b3;
+  }
