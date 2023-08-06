@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import "./register.css";
-import {Link} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 function RegisForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -20,16 +23,40 @@ function RegisForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const addUser = async (e) => {
     e.preventDefault();
-    console.log(formData); // Replace this with your actual registration logic
+
+    try {
+      const response = await axios.post('http://localhost:3000/users/register', {
+        username: formData.username,
+        name: formData.name,
+        address: formData.address,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful',
+        text: 'You have successfully registered.',
+      }).then(() => {
+        navigate('/users/login'); // Redirect to the login page after successful registration
+      });
+    } catch (error) {
+      console.error('Registration Error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Registration Failed',
+        text: 'An error occurred during registration. Please try again.',
+      });
+    }
   };
 
   return (
     <div className="register-container bg-dark">
       <div className="register-form-container">
         <h2 className="register-form-title">Register</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={addUser}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input
@@ -42,6 +69,34 @@ function RegisForm() {
               placeholder="Enter your username"
               required
               maxLength="50"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="username">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your Name"
+              required
+              maxLength="50"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="username">Address</label>
+            <input
+              type="text"
+              className="form-control"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder="Enter your Address"
+              required
+              maxLength="200"
             />
           </div>
           <div className="form-group">
